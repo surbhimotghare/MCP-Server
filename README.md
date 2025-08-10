@@ -55,6 +55,22 @@ Copy the `.env.sample` to `.env` and add your Tavily API key:
 
 Create a new tool in the `server.py` file, that's it!
 
+#### ✅ Answer:
+**Added Advanced URL Shortener Tool to MCP Server**:
+- **Function**: shorten_url(url: str, custom_alias: str = "")
+- **APIs**: Dual service support with automatic fallback
+  - **Primary**: TinyURL's free API service
+  - **Fallback**: V.gd service for custom aliases
+- **Features**:
+  - Auto-adds https:// to URLs without protocol
+  - **Custom alias support** with unique generation
+  - **Service fallback** for optimal reliability
+  - **Comprehensive error handling** for all edge cases
+  - **User-friendly response formatting** with service information
+  - **Automatic alias uniqueness** using timestamp-based generation
+- **Testing**: Comprehensive test suite with `test_final_shortener.py`
+- **Error Handling**: Graceful handling of duplicate aliases, invalid URLs, and service failures
+
 ## Running the MCP Server
 
 To start the MCP server, you will need to add the following to your MCP Profile in Cursor:
