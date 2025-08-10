@@ -51,7 +51,7 @@ A sophisticated, intelligent URL management system that combines the power of th
 - **`server.py`** - Main MCP server with 11 tools
 - **`url_storage.py`** - Database abstraction layer  
 - **`enhanced_url_tools.py`** - Core URL processing
-- **`url_manager_graph.py`** - LangGraph workflow engine
+- **`url_manager_graph_client.py`** - LangGraph workflow engine (client)
 - **`use_cases.py`** - Real-world scenario demonstrations
 
 ---
@@ -98,19 +98,36 @@ Add the following to your MCP Profile in Cursor:
 
 ### **Testing the System**
 
-Run the comprehensive test suite:
+#### **Activity #1: MCP Server Testing** 🏗️
+Test the enhanced URL shortener MCP server with all its tools:
 ```bash
 uv run test_enhanced_url_server.py
 ```
+This tests the core MCP server functionality including URL shortening, validation, metadata extraction, safety checks, QR code generation, and collection management.
 
-Test the LangGraph integration:
+#### **Activity #2: LangGraph Integration Testing** 🏗️
+Test the LangGraph application that interacts with your MCP Server:
 ```bash
 uv run test_langgraph_integration.py
 ```
+This tests the LangGraph workflow integration, intent detection, and workflow routing capabilities.
 
-Try a complete workflow:
+#### **Complete Workflow Testing** 🎯
+Try a complete end-to-end workflow that demonstrates both activities working together:
 ```bash
-uv run test_use_case_demo.py
+uv run test_server_client_e2e.py
+```
+This shows how the LangGraph application (Activity #2) uses the MCP server tools (Activity #1) to process complex user requests.
+
+### **Running the Interactive Demo**
+
+For team presentations, use the interactive demo script:
+```bash
+# Terminal 1: Start MCP Server
+uv run server.py
+
+# Terminal 2: Run Interactive Demo
+uv run demo_interactive.py
 ```
 
 ---

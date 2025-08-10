@@ -1,8 +1,8 @@
 import asyncio
-from url_manager_graph import run_smart_url_manager
+from url_manager_graph_client import run_smart_url_manager
 
-async def test_complete_workflow():
-    """Test a complete end-to-end workflow"""
+async def test_server_client_e2e_workflow():
+    """Test a complete end-to-end workflow between LangGraph client and MCP server"""
     
     user_request = """
     I'm researching AI and Machine Learning. Please analyze these educational resources:
@@ -14,7 +14,7 @@ async def test_complete_workflow():
     Tags: education, ai, machine-learning, tutorials
     """
     
-    print("🧪 Testing Complete Workflow: Content Curation")
+    print("🧪 Testing Server-Client E2E Workflow: Content Curation")
     print("=" * 60)
     print("📝 User Request:")
     print(user_request)
@@ -25,7 +25,7 @@ async def test_complete_workflow():
     print(result)
     
     print("\n" + "="*60)
-    print("🎉 Complete workflow test finished!")
+    print("🎉 Server-Client E2E workflow test finished!")
 
 if __name__ == "__main__":
-    asyncio.run(test_complete_workflow()) 
+    asyncio.run(test_server_client_e2e_workflow()) 

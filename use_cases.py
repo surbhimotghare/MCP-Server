@@ -6,7 +6,7 @@ can automatically handle complex URL management workflows.
 """
 
 import asyncio
-from url_manager_graph import run_smart_url_manager
+from url_manager_graph_client import run_smart_url_manager
 
 async def use_case_1_content_curator():
     """

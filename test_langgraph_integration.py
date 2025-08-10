@@ -1,7 +1,7 @@
 import asyncio
 import subprocess
 import time
-from url_manager_graph import SmartURLManager
+from url_manager_graph_client import SmartURLManager
 
 async def test_basic_langgraph_integration():
     """Test basic LangGraph integration with MCP server"""
