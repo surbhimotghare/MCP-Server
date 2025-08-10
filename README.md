@@ -107,3 +107,6 @@ Choose an API that you enjoy using - and build an MCP server for it!
 Build a simple LangGraph application that interacts with your MCP Server.
 
 You can find details [here](https://github.com/langchain-ai/langchain-mcp-adapters)!
+
+#### ✅ Answer: Enhanced URL Shortener MCP with Smart LangGraph Application
+You can find details in the [URL_SHORTENER_README.md](https://github.com/surbhimotghare/MCP-Server/blob/main/URL_SHORTENER_README.md)!
