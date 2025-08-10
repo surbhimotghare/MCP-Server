@@ -25,26 +25,57 @@ A sophisticated, intelligent URL management system that combines the power of th
 ## 🛠️ **Technical Architecture**
 
 ### **Complete System Stack**
-```
-┌─────────────────────────────────────────────────────────────┐
-│                   User Interface Layer                      │
-│  Natural Language Input → Smart URL Manager (LangGraph)     │
-└─────────────────────────┬───────────────────────────────────┘
-                          │
-┌─────────────────────────▼───────────────────────────────────┐
-│                  Workflow Engine                            │
-│  Intent Detection → Routing → Multi-Node Processing        │
-└─────────────────────────┬───────────────────────────────────┘
-                          │
-┌─────────────────────────▼───────────────────────────────────┐
-│              Enhanced MCP Server (11 Tools)                 │
-│  URL Tools │ Safety │ QR Codes │ Collections │ Search      │
-└─────────────────────────┬───────────────────────────────────┘
-                          │
-┌─────────────────────────▼───────────────────────────────────┐
-│                 Persistent Storage                          │
-│          SQLite Database + External APIs                    │
-└─────────────────────────────────────────────────────────────┘
+
+```mermaid
+graph TB
+    subgraph "🎨 User Interface Layer"
+        UI[Natural Language Input<br/>Smart URL Manager<br/>LangGraph Application]
+    end
+    
+    subgraph "🧠 Workflow Engine"
+        ID[Intent Detection<br/>& Analysis]
+        WR[Workflow Router<br/>& Orchestrator]
+        MP[Multi-Node<br/>Processor]
+    end
+    
+    subgraph "🏗️ Enhanced MCP Server"
+        UT[URL Tools<br/>11 Specialized Tools]
+        ST[Safety &<br/>Validation]
+        QR[QR Code<br/>Generation]
+        CM[Collection<br/>Management]
+        SE[Search &<br/>Organization]
+    end
+    
+    subgraph "💾 Persistent Storage"
+        DB[(SQLite Database<br/>+ External APIs)]
+        API[TinyURL, V.gd<br/>Tavily, Safety APIs]
+    end
+    
+    UI --> ID
+    ID --> WR
+    WR --> MP
+    MP --> UT
+    MP --> ST
+    MP --> QR
+    MP --> CM
+    MP --> SE
+    UT --> DB
+    ST --> API
+    QR --> DB
+    CM --> DB
+    SE --> DB
+    
+    style UI fill:#e1f5fe
+    style ID fill:#f3e5f5
+    style WR fill:#fff3e0
+    style MP fill:#e8f5e8
+    style UT fill:#ffebee
+    style ST fill:#f1f8e9
+    style QR fill:#e0f2f1
+    style CM fill:#fff8e1
+    style SE fill:#fce4ec
+    style DB fill:#e3f2fd
+    style API fill:#f9fbe7
 ```
 
 ### **Core Components**
@@ -121,7 +152,7 @@ This shows how the LangGraph application (Activity #2) uses the MCP server tools
 
 ### **Running the Interactive Demo**
 
-For team presentations, use the interactive demo script:
+To see the server-client interaction, use the interactive demo script:
 ```bash
 # Terminal 1: Start MCP Server
 uv run server.py
