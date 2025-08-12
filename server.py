@@ -455,4 +455,24 @@ def list_collections() -> str:
         return f"❌ Error retrieving collections: {str(e)}"
 
 if __name__ == "__main__":
-    mcp.run(transport="stdio")
+    import sys
+    
+    # Print startup messages to stderr so they don't interfere with MCP protocol
+    print("🚀 Enhanced URL Shortener MCP Server", file=sys.stderr)
+    print("=" * 50, file=sys.stderr)
+    print("📡 Starting MCP server with 11 specialized tools...", file=sys.stderr)
+    print("🔗 URL shortening, validation, metadata extraction", file=sys.stderr)
+    print("🛡️  Safety analysis, QR code generation", file=sys.stderr)
+    print("📁 Collection management and search capabilities", file=sys.stderr)
+    print("=" * 50, file=sys.stderr)
+    print("✅ Server is ready and listening for connections!", file=sys.stderr)
+    print("💡 Press Ctrl+C to stop the server", file=sys.stderr)
+    print("=" * 50, file=sys.stderr)
+    
+    try:
+        mcp.run(transport="stdio")
+    except KeyboardInterrupt:
+        print("\n🛑 Server shutting down gracefully...", file=sys.stderr)
+        print("👋 Goodbye!", file=sys.stderr)
+    except Exception as e:
+        print(f"\n❌ Server error: {str(e)}", file=sys.stderr)
